@@ -1,8 +1,9 @@
 import ui
-import level_one
+import level_one, level_two, level_three
 import sys
 import util
 import engine 
+
 
 coord_a = 1
 coord_b = 1
@@ -31,7 +32,10 @@ def move(board):
         return([coord_a, coord_b])
 
 
+
+
 def main():
+    global coord_a, coord_b
     board = level_one.board_level_one()
     engine.put_player_on_board(board, [coord_a, coord_b])
     ui.display_window(board)
@@ -41,9 +45,39 @@ def main():
         board = level_one.board_level_one()
         engine.put_player_on_board(board, coord)
         ui.display_window(board)
-        
 
-main()
+#level TWO
+        if coord == level_one.GATE_ONE:
+            coord_a = 1
+            coord_b = 1
+            util.clear_screen()
+            board = level_two.board_level_two()
+            engine.put_player_on_board(board, [coord_a, coord_b])
+            ui.display_window(board)
+            while True:
+                coord = move(board)
+                util.clear_screen()
+                board = level_two.board_level_two()
+                engine.put_player_on_board(board, coord)
+                ui.display_window(board)
+#level THREE
+                if coord == level_two.GATE_TWO:
+                    coord_a = 1
+                    coord_b = 1
+                    util.clear_screen()
+                    board = level_three.board_level_three()
+                    engine.put_player_on_board(board, [coord_a, coord_b])
+                    ui.display_window(board)
+                    while True:
+                        coord = move(board)
+                        util.clear_screen()
+                        board = level_three.board_level_three()
+                        engine.put_player_on_board(board, coord)
+                        ui.display_window(board)
+
+
+if __name__ == '__main__':
+    main()
 
 
 # def main():
@@ -76,8 +110,6 @@ main()
 #                 engine.put_player_on_board(board, [coord_a, coord_b])
 #                 ui.display_window(board) 
 
-# if __name__ == '__main__':
-#     main()
 
 
 

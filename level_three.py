@@ -1,6 +1,6 @@
 import ui
 
-def board_level_two():
+def board_level_three():
     window_lst_of_lst = []
     for i in range(0,20):
         window_lst_of_lst.append(['🟦'] * 30)  #⬜
@@ -16,11 +16,6 @@ def board_level_two():
         window_lst_of_lst[2 + i][5] = '⛅'
         window_lst_of_lst[8 + i][4] = '⛅'
         window_lst_of_lst[18][19 + i] = '⛅'
-
-
-
-
-         
     for i in range(0,5):
         window_lst_of_lst[5][3 + i] = '⛅'
         window_lst_of_lst[10 + i][19] = '⛅'
@@ -28,13 +23,7 @@ def board_level_two():
         window_lst_of_lst[10 + i][19] = '⛅'
         window_lst_of_lst[19][2 + i] = '⛅'
         window_lst_of_lst[4 + i][10] = '⛅'
-        window_lst_of_lst[12][4 + i] = '⛅' 
-
-
-
-
-
-            
+        window_lst_of_lst[12][4 + i] = '⛅'     
     for i in range(0,3):
         window_lst_of_lst[10][26 + i] = '⛅'
         window_lst_of_lst[10][12 + i] = '⛅'
@@ -47,6 +36,3 @@ def board_level_two():
         window_lst_of_lst[17][2 + i] = '⛅'     
     ui.add_gate_to_board(window_lst_of_lst, [19,29])
     return window_lst_of_lst
-
-
-ui.display_window(board_level_two())

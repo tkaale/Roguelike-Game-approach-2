@@ -1,5 +1,7 @@
 import ui
 
+GATE_TWO = [9,29]
+
 def board_level_two():
     window_lst_of_lst = []
     for i in range(0,20):
@@ -34,8 +36,5 @@ def board_level_two():
         window_lst_of_lst[8 + i][4] = '🌳'
         window_lst_of_lst[18][19 + i] = '🌳'
         window_lst_of_lst[10][26 + i] = '🌳'   
-    ui.add_gate_to_board(window_lst_of_lst, [9,29])
+    ui.add_gate_to_board(window_lst_of_lst, GATE_TWO)
     return window_lst_of_lst
-
-
-ui.display_window(board_level_two())
