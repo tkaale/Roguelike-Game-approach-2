@@ -1,13 +1,8 @@
 import ui
 import level_one
-
-# import pygame
-
 import sys
 import util
 import engine 
-
-
 
 coord_a = 1
 coord_b = 1
