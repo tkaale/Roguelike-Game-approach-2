@@ -1,31 +1,96 @@
 import ui
 import level_one
-import pygame
+
+# import pygame
+
+import sys
+import util
+import engine 
+
+
 
 coord_a = 1
 coord_b = 1
 
-def put_player_on_board(board, place):
-    board[place[0]][place[1]] = '🐱'
-    return board
+
+def move(board):
+    global coord_a, coord_b
+    while True:
+        key = util.key_pressed()
+        if key.upper() == 'W':
+            coord_a -= 1
+            if [coord_a, coord_b] in ui.check_walls(board):
+                        coord_a += 1
+        if key.upper() == 'S':
+            coord_a += 1
+            if [coord_a, coord_b] in ui.check_walls(board):
+                        coord_a -= 1
+        if key.upper() == 'D':
+            coord_b += 1
+            if [coord_a, coord_b] in ui.check_walls(board):
+                        coord_b -= 1
+        if key.upper() == 'A':
+            coord_b -= 1
+            if [coord_a, coord_b] in ui.check_walls(board):
+                        coord_b += 1
+        return([coord_a, coord_b])
 
 
 def main():
-    global coord_a, coord_b
-    while True:
-        if event.key == pygame.K_w:
-            coord_a -= 1
-        if event.key == pygame.K_s:
-            coord_a += 1
-        if event.key == pygame.K_d:
-            coord_b += 1
-        if event.key == pygame.K_a:
-            coord_b -= 1
     board = level_one.board_level_one()
-    put_player_on_board(board, [coord_a, coord_b])
-    ui.display_window(board) 
+    engine.put_player_on_board(board, [coord_a, coord_b])
+    ui.display_window(board)
+    while True:
+        coord = move(board)
+        util.clear_screen()
+        board = level_one.board_level_one()
+        engine.put_player_on_board(board, coord)
+        ui.display_window(board)
+        
 
 main()
+
+
+# def main():
+#     util.clear_screen()
+#     global coord_a, coord_b
+#     while True:
+#         board = level_one.board_level_one()
+#         for event in pygame.event.get():
+#             if event.type == pygame.QUIT:
+#                 sys.exit()
+#             if event.type == pygame.KEYDOWN:
+#                 if event.key == pygame.K_w:
+#                     coord_a -= 1
+#                     if [coord_a, coord_b] in ui.check_walls(board):
+#                         coord_a += 1
+#                 if event.key == pygame.K_s:
+#                     coord_a += 1
+#                     if [coord_a, coord_b] in ui.check_walls(board):
+#                         coord_a -= 1
+#                 if event.key == pygame.K_d:
+#                     coord_b += 1
+#                     if [coord_a, coord_b] in ui.check_walls(board):
+#                         coord_b -= 1
+#                 if event.key == pygame.K_a:
+#                     coord_b -= 1
+#                     if [coord_a, coord_b] in ui.check_walls(board):
+#                         coord_b += 1
+#                 util.clear_screen()
+#                 board = level_one.board_level_one()
+#                 engine.put_player_on_board(board, [coord_a, coord_b])
+#                 ui.display_window(board) 
+
+# if __name__ == '__main__':
+#     main()
+
+
+
+
+
+
+
+
 
 
 # def main():

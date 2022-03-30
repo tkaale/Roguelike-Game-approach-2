@@ -33,3 +33,5 @@ def board_level_one():
         window_lst_of_lst[6 + i][24] = '🧱'
     ui.add_gate_to_board(window_lst_of_lst, [18,29])
     return window_lst_of_lst
+
+        
