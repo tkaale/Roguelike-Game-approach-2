@@ -1,4 +1,9 @@
 import ui
+import engine
+
+INVENTORY= {'🪓': 1, '🔪': 1, '💎': 6,}
+
+inventory_list = engine.inventory_list(INVENTORY)
 
 def board_level_three():
     window_lst_of_lst = []
@@ -34,5 +39,14 @@ def board_level_three():
         window_lst_of_lst[6 + i][24] = '🌊'
         window_lst_of_lst[8 + i][15] = '🌊'
         window_lst_of_lst[17][2 + i] = '🌊'     
-    ui.add_gate_to_board(window_lst_of_lst, [19,29])
+    window_lst_of_lst[19][29] = '👑'
+    window_lst_of_lst[7][15] = inventory_list[0]
+    window_lst_of_lst[8][8] = inventory_list[1]
+    window_lst_of_lst[16][3] = inventory_list[2]
+    window_lst_of_lst[18][10] = inventory_list[3]
+    window_lst_of_lst[15][26] = inventory_list[4]
+    window_lst_of_lst[13][17] = inventory_list[5]
+    window_lst_of_lst[3][20] = inventory_list[6]
+    window_lst_of_lst[2][27] = inventory_list[7]
+
     return window_lst_of_lst

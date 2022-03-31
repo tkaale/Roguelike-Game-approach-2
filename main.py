@@ -7,6 +7,7 @@ import engine
 
 coord_a = 1
 coord_b = 1
+INVENTORY= {'🪓': 1, '🔪': 1, '💎': 3, '🔑': 1, }
 
 
 def move(board):
