@@ -37,3 +37,5 @@ def board_level_one():
     return window_lst_of_lst
 
         
+print(board_level_one())
+print(ui.check_walls(board_level_one()))
