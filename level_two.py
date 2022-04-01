@@ -2,9 +2,9 @@ import ui
 import engine
 
 GATE_TWO = [9,29]
-INVENTORY= {'🪓': 1, '🔪': 1, '💎': 5, '🔑': 1, }
+INVENTORY_TWO= {'🪓': 1, '🔪': 1, '💎': 5, '🔑': 1, }
 
-inventory_list = engine.inventory_list(INVENTORY)
+inventory_list = engine.inventory_list(INVENTORY_TWO)
 
 def board_level_two():
     window_lst_of_lst = []

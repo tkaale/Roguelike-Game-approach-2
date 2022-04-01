@@ -6,7 +6,8 @@ import engine
 
 coord_a = 1
 coord_b = 1
-INVENTORY= {'🪓': 1, '🔪': 1, '💎': 3, '🔑': 1, }
+INVENTORY= {'🪓': 0, '🔪': 0, '💎': 0, '🔑': 0}
+LIVES = {'🧡': 100}
 
 
 def move(board):
@@ -39,12 +40,18 @@ def main():
     board = level_one.board_level_one()
     engine.put_player_on_board(board, [coord_a, coord_b])
     ui.display_window(board)
+    ui.display_inventory(INVENTORY)
+    ui.display_inventory(LIVES)
+
     while True:
         coord = move(board)
         util.clear_screen()
         board = level_one.board_level_one()
         engine.put_player_on_board(board, coord)
         ui.display_window(board)
+        ui.display_inventory(INVENTORY)
+        ui.display_inventory(LIVES)
+
 
 #level TWO
         if coord == level_one.GATE_ONE:

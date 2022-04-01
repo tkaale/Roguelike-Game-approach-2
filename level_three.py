@@ -1,9 +1,9 @@
 import ui
 import engine
 
-INVENTORY= {'🪓': 1, '🔪': 1, '💎': 6,}
+INVENTORY_THREE= {'🪓': 1, '🔪': 1, '💎': 6,}
 
-inventory_list = engine.inventory_list(INVENTORY)
+inventory_list = engine.inventory_list(INVENTORY_THREE)
 
 def board_level_three():
     window_lst_of_lst = []

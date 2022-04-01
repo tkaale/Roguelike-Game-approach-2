@@ -2,6 +2,13 @@ def display_window(window):
     for sublist in window:
         print(''.join(sublist))
 
+def display_inventory(inventory):
+    inventory_list = []
+    for key in inventory:
+        inventory_list.append(f"{key}: {inventory[key]}")
+    print('   '.join(inventory_list))
+
+
 def add_gate_to_board(board, gate):
      board[gate[0]][gate[1]] = '🪜'
      return board
