@@ -8,8 +8,6 @@ def put_player_on_board(board, place):
 
 # 👑 💎 🔑 💊 🐶 🐭  🦈 🔪 🪓 🏹 🦹‍♀️ 
 
-INVENTORY= {'🪓': 1, '🔪': 1, '💎': 5, '🔑': 1, }
-
 def inventory_list(inventory):
     inventory_list = []
     for key in inventory:
@@ -18,13 +16,13 @@ def inventory_list(inventory):
     return inventory_list
 
 
-def get_random_coordinates(inventory):
-    random_coordinates = []
-    for key in inventory.keys(): 
-        for counter in range(0, inventory[key]):
-            first_coord = random.randint(1,20)
-            second_coord = random.randint(1,28)
-            random_coordinates.append([first_coord, second_coord])
-    return random_coordinates
-
-print(get_random_coordinates(INVENTORY))
+def add_mouses(board,coord_a_start, coord_a_end, coord_b_start, coord_b_end):
+    while True:
+        coord_a = random.randint(coord_a_start, coord_a_end)
+        coord_b = random.randint(coord_b_start, coord_b_end)
+        if board[coord_a][coord_b] == '⬛' or board[coord_a][coord_b] == '🟩' or board[coord_a][coord_b] == '🟦':
+            break
+        else:
+            continue
+    return [coord_a, coord_b]
+    

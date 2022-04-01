@@ -47,7 +47,18 @@ def board_level_one():
     window_lst_of_lst[6][27] = inventory_list[5]
     window_lst_of_lst[16][6] = inventory_list[6]
     window_lst_of_lst[18][1] = inventory_list[7]
-
+    mouse_one = engine.add_mouses(window_lst_of_lst, 4,9,7,8)
+    window_lst_of_lst[mouse_one[0]][mouse_one[1]] = '🐭'
+    mouse_two = engine.add_mouses(window_lst_of_lst, 5,7,16,20)
+    window_lst_of_lst[mouse_two[0]][mouse_two[1]] = '🐭'
+    mouse_three = engine.add_mouses(window_lst_of_lst, 15,17,20,24)
+    window_lst_of_lst[mouse_three[0]][mouse_three[1]] = '🐭'
+    mouse_four = engine.add_mouses(window_lst_of_lst, 11,14,10,13)
+    window_lst_of_lst[mouse_four[0]][mouse_four[1]] = '🐭'
+    mouse_five = engine.add_mouses(window_lst_of_lst, 6,12,1,3)
+    window_lst_of_lst[mouse_five[0]][mouse_five[1]] = '🐭'
+    mouse_six = engine.add_mouses(window_lst_of_lst, 16,20,12,15)
+    window_lst_of_lst[mouse_six[0]][mouse_six[1]] = '🐭'
 
     return window_lst_of_lst
 
