@@ -7,7 +7,7 @@ import engine
 coord_a = 1
 coord_b = 1
 INVENTORY= {'🪓': 0, '🔪': 0, '💎': 0, '🔑': 0}
-LIVES = {'🧡': 100}
+LIVES = {'🧡': '🟥🟥🟥🟥🟥'}
 
 
 def move(board):
@@ -32,15 +32,14 @@ def move(board):
                         coord_b += 1
         return([coord_a, coord_b])
 
-
-
-
 def main():
     global coord_a, coord_b
     board = level_one.board_level_one()
     engine.put_player_on_board(board, [coord_a, coord_b])
     ui.display_window(board)
+    print('')
     ui.display_inventory(INVENTORY)
+    print('')
     ui.display_inventory(LIVES)
 
     while True:
