@@ -61,5 +61,6 @@ def board_level_two():
     window_lst_of_lst[mouse_five[0]][mouse_five[1]] = '🐶'
     mouse_six = engine.add_mouses(window_lst_of_lst, 16,20,15,15)
     window_lst_of_lst[mouse_six[0]][mouse_six[1]] = '🐶'
-
+    #healing
+    window_lst_of_lst[19][25] = '💊'
     return window_lst_of_lst

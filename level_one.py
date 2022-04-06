@@ -4,13 +4,6 @@ import engine
 GATE_ONE = [18,29]
 INVENTORY_ONE= {'🪓': 1, '🔪': 1, '💎': 5, '🔑': 1, }
 
-MOUSE_ONE = [4,9]   
-MOUSE_TWO = [5,7]
-MOUSE_THREE = [15,17]
-MOUSE_FOUR = [11,14]
-MOUSE_FIVE = [6,12]
-MOUSE_SIX = [16,20]
-
 inventory_list = engine.inventory_list(INVENTORY_ONE)
 
 
@@ -46,6 +39,7 @@ def board_level_one():
         window_lst_of_lst[10][26 + i] = '🧱'
         window_lst_of_lst[6 + i][24] = '🧱'
     ui.add_gate_to_board(window_lst_of_lst, GATE_ONE)
+    #inventory
     window_lst_of_lst[8][8] = inventory_list[0]
     window_lst_of_lst[19][7] = inventory_list[1]
     window_lst_of_lst[16][27] = inventory_list[2]
@@ -54,7 +48,7 @@ def board_level_one():
     window_lst_of_lst[6][27] = inventory_list[5]
     window_lst_of_lst[16][6] = inventory_list[6]
     window_lst_of_lst[18][1] = inventory_list[7]
-
+    #enemy
     mouse_one = engine.add_mouses(window_lst_of_lst, 4,9,7,7)
     window_lst_of_lst[mouse_one[0]][mouse_one[1]] = '🐭'
     mouse_two = engine.add_mouses(window_lst_of_lst, 5,7,16,16)
@@ -67,7 +61,8 @@ def board_level_one():
     window_lst_of_lst[mouse_five[0]][mouse_five[1]] = '🐭'
     mouse_six = engine.add_mouses(window_lst_of_lst, 16,20,15,15)
     window_lst_of_lst[mouse_six[0]][mouse_six[1]] = '🐭'
-
+    #healing
+    window_lst_of_lst[15][21] = '💊'
     return window_lst_of_lst
 
 

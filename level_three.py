@@ -58,8 +58,10 @@ def board_level_three():
     window_lst_of_lst[mouse_four[0]][mouse_four[1]] = '🦈'
     mouse_five = engine.add_mouses(window_lst_of_lst, 12,12,1,6)
     window_lst_of_lst[mouse_five[0]][mouse_five[1]] = '🦈'
-    mouse_six = engine.add_mouses(window_lst_of_lst, 10,20,11,16)
+    mouse_six = engine.add_mouses(window_lst_of_lst, 10,10,11,16)
     window_lst_of_lst[mouse_six[0]][mouse_six[1]] = '🦈'
+    #healing
+    window_lst_of_lst[8][10] = '💊'
 
     return window_lst_of_lst
 
