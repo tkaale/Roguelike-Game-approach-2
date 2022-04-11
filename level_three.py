@@ -48,7 +48,7 @@ def board_level_three():
     window_lst_of_lst[13][17] = inventory_list[5]
     window_lst_of_lst[3][20] = inventory_list[6]
     window_lst_of_lst[2][27] = inventory_list[7]
-    mouse_one = engine.add_mouses(window_lst_of_lst, 4,4,5,8)
+    mouse_one = engine.add_mouses(window_lst_of_lst, 4,4,5,9)
     window_lst_of_lst[mouse_one[0]][mouse_one[1]] = '🦈'
     mouse_two = engine.add_mouses(window_lst_of_lst, 5,9,20,20)
     window_lst_of_lst[mouse_two[0]][mouse_two[1]] = '🦈'

@@ -9,6 +9,20 @@ coord_b = 1
 INVENTORY= {'🪓': 0, '🔪': 0, '💎': 0, '🔑': 0}
 LIVES = {'🧡': '🟥🟥🟥🟥🟥'}
 
+def check_inventory(board, level):
+    global coord_a, coord_b, INVENTORY, LIVES
+    if board[coord_a][coord_b] == '🐭':
+        pass
+    if board[coord_a][coord_b] == '💎':
+        INVENTORY['💎'] += 1
+        ui.delate_inventory(board, coord_a, coord_b, level)
+    if board[coord_a][coord_b] == '🪓':
+        pass
+    if board[coord_a][coord_b] == '🔪':
+        pass
+    if board[coord_a][coord_b] == '🔑':
+        pass
+    return board
 
 def move(board):
     global coord_a, coord_b
@@ -41,16 +55,16 @@ def main():
     ui.display_inventory(INVENTORY)
     print('')
     ui.display_inventory(LIVES)
-
     while True:
         coord = move(board)
         util.clear_screen()
         board = level_one.board_level_one()
         engine.put_player_on_board(board, coord)
         ui.display_window(board)
+        print('')
         ui.display_inventory(INVENTORY)
+        print('')
         ui.display_inventory(LIVES)
-
 
 #level TWO
         if coord == level_one.GATE_ONE:
@@ -60,12 +74,20 @@ def main():
             board = level_two.board_level_two()
             engine.put_player_on_board(board, [coord_a, coord_b])
             ui.display_window(board)
+            print('')
+            ui.display_inventory(INVENTORY)
+            print('')
+            ui.display_inventory(LIVES)
             while True:
                 coord = move(board)
                 util.clear_screen()
                 board = level_two.board_level_two()
                 engine.put_player_on_board(board, coord)
                 ui.display_window(board)
+                print('')
+                ui.display_inventory(INVENTORY)
+                print('')
+                ui.display_inventory(LIVES)
 #level THREE
                 if coord == level_two.GATE_TWO:
                     coord_a = 1
@@ -74,12 +96,20 @@ def main():
                     board = level_three.board_level_three()
                     engine.put_player_on_board(board, [coord_a, coord_b])
                     ui.display_window(board)
+                    print('')
+                    ui.display_inventory(INVENTORY)
+                    print('')
+                    ui.display_inventory(LIVES)
                     while True:
                         coord = move(board)
                         util.clear_screen()
                         board = level_three.board_level_three()
                         engine.put_player_on_board(board, coord)
                         ui.display_window(board)
+                        print('')
+                        ui.display_inventory(INVENTORY)
+                        print('')
+                        ui.display_inventory(LIVES)
 
 
 if __name__ == '__main__':

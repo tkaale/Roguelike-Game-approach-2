@@ -25,3 +25,12 @@ def check_walls(board):
             if check == '🌊':
                 walls_coordinates.append([board.index(sublist), i])
     return walls_coordinates
+
+def delate_inventory(board, coord_a, coord_b, level):
+    if level == '1':
+        board[coord_a][coord_b] = '⬛'
+    if level == '2':
+        board[coord_a][coord_b] = '🟩'
+    if level == '3':
+        board[coord_a][coord_b] = '🟦'
+    return board
