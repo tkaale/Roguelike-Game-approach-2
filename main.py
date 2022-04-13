@@ -9,20 +9,6 @@ coord_b = 1
 INVENTORY= {'🪓': 0, '🔪': 0, '💎': 0, '🔑': 0}
 LIVES = {'🧡': '🟥🟥🟥🟥🟥'}
 
-def check_inventory(board, level):
-    global coord_a, coord_b, INVENTORY, LIVES
-    if board[coord_a][coord_b] == '🐭':
-        pass
-    if board[coord_a][coord_b] == '💎':
-        INVENTORY['💎'] += 1
-        ui.delate_inventory(board, coord_a, coord_b, level)
-    if board[coord_a][coord_b] == '🪓':
-        pass
-    if board[coord_a][coord_b] == '🔪':
-        pass
-    if board[coord_a][coord_b] == '🔑':
-        pass
-    return board
 
 def move(board):
     global coord_a, coord_b

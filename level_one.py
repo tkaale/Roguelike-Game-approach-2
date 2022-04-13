@@ -1,5 +1,6 @@
 import ui
 import engine
+import main
 
 GATE_ONE = [18,29]
 INVENTORY_ONE= {'🪓': 1, '🔪': 1, '💎': 5, '🔑': 1, }
@@ -41,13 +42,30 @@ def board_level_one():
     ui.add_gate_to_board(window_lst_of_lst, GATE_ONE)
     #inventory
     window_lst_of_lst[8][8] = inventory_list[0]
+    if coordinates == [8, 8]:
+        window_lst_of_lst[8][8] = '⬛'
     window_lst_of_lst[19][7] = inventory_list[1]
+    if coordinates == [19, 7]:
+        window_lst_of_lst[19][7] = '⬛'
     window_lst_of_lst[16][27] = inventory_list[2]
+    if coordinates == [16, 27]:
+        window_lst_of_lst[16][27] = '⬛'
     window_lst_of_lst[19][9] = inventory_list[3]
+    if coordinates == [19, 9]:
+        window_lst_of_lst[19][9] = '⬛'
     window_lst_of_lst[11][6] = inventory_list[4]
+    if coordinates == [11, 6]:
+        window_lst_of_lst[11][6] = '⬛'
     window_lst_of_lst[6][27] = inventory_list[5]
+    if coordinates == [6, 27]:
+        window_lst_of_lst[6][27] = '⬛'
     window_lst_of_lst[16][6] = inventory_list[6]
+    if coordinates == [16, 6]:
+        window_lst_of_lst[16][6] = '⬛'
+    #key
     window_lst_of_lst[18][1] = inventory_list[7]
+    if coordinates == [18, 1]:
+        window_lst_of_lst[18][1] = '⬛'
     #enemy
     mouse_one = engine.add_mouses(window_lst_of_lst, 4,9,7,7)
     window_lst_of_lst[mouse_one[0]][mouse_one[1]] = '🐭'

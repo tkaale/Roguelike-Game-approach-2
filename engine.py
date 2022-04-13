@@ -26,5 +26,4 @@ def add_mouses(board,coord_a_start, coord_a_end, coord_b_start, coord_b_end):
     return [coord_a, coord_b]
 
 
-
     
