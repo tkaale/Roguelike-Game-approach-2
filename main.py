@@ -32,8 +32,10 @@ def move(board):
                         coord_b += 1
         return([coord_a, coord_b])
 
+coord = []
+
 def main():
-    global coord_a, coord_b
+    global coord_a, coord_b, coord
     board = level_one.board_level_one()
     engine.put_player_on_board(board, [coord_a, coord_b])
     ui.display_window(board)

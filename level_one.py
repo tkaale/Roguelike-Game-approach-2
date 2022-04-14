@@ -9,7 +9,8 @@ inventory_list = engine.inventory_list(INVENTORY_ONE)
 
 
 def board_level_one():
-    coordinates = [8,8]
+    coordinates = main.coord_a
+    print(coordinates)
     window_lst_of_lst = []
     for i in range(0,20):
         window_lst_of_lst.append(['⬛'] * 30)  #⬜

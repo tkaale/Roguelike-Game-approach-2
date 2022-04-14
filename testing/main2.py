@@ -1,33 +1,50 @@
 import util2
 import ui2
+import engine2
 
 COORD_A = 1
 COORD_B = 1
 INVENTORY= {'🪓': 0, '🔪': 0, '💎': 0, '🔑': 0}
 LIVES = {'🧡': '🟥🟥🟥🟥🟥'}
 
-BOARD = ui2.board('1')
+BOARD_ONE = ui2.board('1')
+BOARD_TWO = ui2.board('2')
+BOARD_THREE = ui2.board('3')
 
 def move(board):
-    global coord_a, coord_b
+    global COORD_A, COORD_B
     while True:
         key = util2.key_pressed()
         if key.upper() == 'W':
-            coord_a -= 1
-            if [coord_a, coord_b] in ui2.check_walls(board):
-                        coord_a += 1
+            COORD_A -= 1
+            if [COORD_A, COORD_B] in ui2.check_walls(board):
+                        COORD_A += 1
         if key.upper() == 'S':
-            coord_a += 1
-            if [coord_a, coord_b] in ui2.check_walls(board):
-                        coord_a -= 1
+            COORD_A += 1
+            if [COORD_A, COORD_B] in ui2.check_walls(board):
+                        COORD_A -= 1
         if key.upper() == 'D':
-            coord_b += 1
-            if [coord_a, coord_b] in ui2.check_walls(board):
-                        coord_b -= 1
+            COORD_B += 1
+            if [COORD_A, COORD_B] in ui2.check_walls(board):
+                        COORD_B -= 1
         if key.upper() == 'A':
-            coord_b -= 1
-            if [coord_a, coord_b] in ui2.check_walls(board):
-                        coord_b += 1
-        return([coord_a, coord_b])
+            COORD_B -= 1
+            if [COORD_A, COORD_B] in ui2.check_walls(board):
+                        COORD_B += 1
+        return([COORD_A, COORD_B])
 
-ui2.display_board(BOARD)
+def main():
+    global COORD_A, COORD_B, BOARD_ONE
+    board = BOARD_ONE
+    engine2.put_player_on_board(board, [COORD_A, COORD_B])
+    ui2.display_board(board)
+    while True:
+        coord = move(board)
+        util2.clear_screen()
+        board = ui2.board('1')
+        engine2.put_player_on_board(board, coord)
+        ui2.display_board(board)
+
+
+if __name__ == '__main__':
+    main()
